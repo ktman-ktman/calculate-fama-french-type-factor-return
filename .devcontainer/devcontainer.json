@@ -1,0 +1,37 @@
+{
+    "name": "calculate-fama-french-type-factor-return",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".",
+        "args": {
+            "VARIANT": "3.12.3-bookworm",
+            "USERNAME": "vscode",
+            "USER_UID": "1000",
+            "USER_GID": "1000",
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "args": [
+                            "-l"
+                        ]
+                    }
+                }
+            },
+        },
+    },
+    "mounts": [
+		"source=vscode-extensions,target=/home/vscode/.vscode-server/extensions,type=volume",
+		"source=vscode-extensions-insider,target=/home/vscode/.vscode-server-insider/extensions,type=volume",
+	],
+    // "runArgs": [
+    //     "--gpus",
+    //     "all",
+    // ],
+    "remoteUser": "vscode",
+    "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+}

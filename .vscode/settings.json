@@ -1,0 +1,13 @@
+{
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.formatOnSave": true,
+    },
+    "editor.fontFamily": "'Moralerspace Neon HWNF', 'UDEV Gothic NF', Consolas, 'Courier New', monospace",
+    "editor.fontWeight": "normal",
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.fontSize": 12
+}
